@@ -99,9 +99,6 @@ function analyzeSalesData(data, options) {
     const sellerIndex = Object.fromEntries(sellerStats.map(item => [item.id, item])) // Ключом будет id, значением — запись из sellerStats
     const productIndex =  Object.fromEntries(data.products.map(item => [item.sku, item]))// Ключом будет sku, значением — запись из data.products 
 
-    console.log(sellerIndex);
-    console.log(productIndex);
-
 
     // Расчет выручки и прибыли для каждого продавца
 
@@ -132,13 +129,11 @@ function analyzeSalesData(data, options) {
         });
     });
     
-    console.log("sellerStats", sellerStats);
     
 
     // Сортировка продавцов по прибыли
     
     sellerStats.sort((a, b) => b.profit - a.profit);
-    console.log("сортировка по прибыли", sellerStats);
 
 
     // Назначение премий на основе ранжирования
@@ -154,7 +149,6 @@ function analyzeSalesData(data, options) {
             (product_1, product_2) => product_2.quantity - product_1.quantity
         ).slice(0, 10);
     });
-    console.log("расчёт бонусов", sellerStats);
 
 
     // Подготовка итоговой коллекции с нужными полями
