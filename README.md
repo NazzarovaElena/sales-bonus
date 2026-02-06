@@ -1,4 +1,5 @@
 # Проектная работа "Пряники"
+https://github.com/NazzarovaElena/sales-bonus
 5 спринт, модуль JS
 
 ## Описание проекта
